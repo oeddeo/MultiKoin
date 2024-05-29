@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Country App</string>
+    <string name="title">Test app</string>
+    <string name="location">location</string>
+    <string name="start_screen">Start Screen</string>
+    <string name="country_screen">Country Screen</string>
+    <string name="this_is_country">This is country:</string>
+    <string name="this_iss_country">This is country:</string>
+</resources>
