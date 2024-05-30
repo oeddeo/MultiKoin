@@ -25,6 +25,7 @@ fun CountryScreen(
     viewModel: LocationViewModel = viewModel { LocationViewModel() },
     onBackClick: ()->Unit,
     onNextClick: ()->Unit = {},
+    name: String,
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
@@ -39,6 +40,8 @@ fun CountryScreen(
         MaterialTheme {
             Column(modifier = Modifier.padding(it)) {
                 Text(text = "${stringResource(Res.string.this_is_country)} ${uiState.userLocation.location}")
+
+                Text(text = name)
             }
         }
     }

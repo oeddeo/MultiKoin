@@ -1,6 +1,5 @@
 package screens
 
-import Components.NavigationIcon
 import ViewModels.LocationViewModel
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
@@ -30,8 +29,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavHostController
-import data.Screens
 import me.sample.library.resources.Res
 import me.sample.library.resources.se
 import org.jetbrains.compose.resources.painterResource
@@ -40,7 +37,7 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun LocationScreen(
     viewModel: LocationViewModel = viewModel { LocationViewModel() },
-    onNextClick: ()-> Unit,
+    onNextClick: (String?) -> Unit,
     )
 {
     val uiState by viewModel.uiState.collectAsState()
@@ -100,7 +97,7 @@ fun LocationScreen(
 
                 Button(
                     modifier = Modifier.align(Alignment.CenterHorizontally),
-                    onClick = { onNextClick()}
+                    onClick = { onNextClick("yooo")}
                 )
                 { Text("Go to 2nd Screen") }
             }
