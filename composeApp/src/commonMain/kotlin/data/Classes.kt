@@ -5,7 +5,6 @@ import me.sample.library.resources.Res
 import me.sample.library.resources.country_screen
 import me.sample.library.resources.jp
 import me.sample.library.resources.start_screen
-import me.sample.library.resources.title
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.StringResource
 
@@ -22,7 +21,7 @@ data class UserLocation(
     val showContent: Boolean = false)
 
 
-enum class Screens(val title: StringResource) {
+enum class Screen(val title: StringResource) {
     Start(title = Res.string.start_screen),
     CountryDetails(title = Res.string.country_screen)
 }

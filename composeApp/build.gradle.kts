@@ -55,6 +55,9 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -66,6 +69,9 @@ kotlin {
             implementation(libs.kotlinx.datetime)
             implementation(libs.lifecycle.viewmodel.compose)
             implementation(libs.navigation.compose)
+
+            api(libs.koin.core)
+            implementation(libs.koin.compose)
 
 
         }

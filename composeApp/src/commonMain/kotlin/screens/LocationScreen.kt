@@ -36,7 +36,7 @@ import org.jetbrains.compose.resources.painterResource
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LocationScreen(
-    viewModel: LocationViewModel = viewModel { LocationViewModel() },
+    viewModel: LocationViewModel,
     onNextClick: (String?) -> Unit,
     )
 {
@@ -100,6 +100,7 @@ fun LocationScreen(
                     onClick = { onNextClick(uiState.userLocation.localTime)}
                 )
                 { Text("Go to 2nd Screen") }
+                Text(text = "Injected text: ${viewModel.injectedString}")
             }
 
             AnimatedVisibility(uiState.showContent) {
