@@ -97,7 +97,7 @@ fun LocationScreen(
 
                 Button(
                     modifier = Modifier.align(Alignment.CenterHorizontally),
-                    onClick = { onNextClick("yooo")}
+                    onClick = { onNextClick(uiState.userLocation.localTime)}
                 )
                 { Text("Go to 2nd Screen") }
             }

@@ -24,16 +24,12 @@ fun App(
         modifier = Modifier.padding()
     ) {
         composable(route = Screens.Start.name) {
-            LocationScreen(
-                viewModel
-            ) { name -> navController.navigate("${Screens.CountryDetails.name}/$name") }
+            LocationScreen(viewModel) { name -> navController.navigate("${Screens.CountryDetails.name}/$name") }
         }
         composable(
             route = "${Screens.CountryDetails.name}/{name}",
-            arguments = listOf(navArgument("name") {
-                defaultValue = "no argument"
-                nullable = true
-            })) {
+            arguments = listOf(navArgument("name") {})
+        ) {
                 backStackEntry ->
             val name = backStackEntry.arguments?.getString("name") ?: "no argument"
             CountryScreen(viewModel, navController::popBackStack, name = name)
