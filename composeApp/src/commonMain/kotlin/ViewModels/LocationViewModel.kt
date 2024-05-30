@@ -20,7 +20,9 @@ import me.sample.library.resources.jp
 import me.sample.library.resources.mx
 import me.sample.library.resources.se
 
-class LocationViewModel : ViewModel() {
+class LocationViewModel(val injectedString: String) : ViewModel() {
+
+
 
     private val _uisState = MutableStateFlow(LocationState(Country(), UserLocation()))
     val uiState: StateFlow<LocationState> = _uisState.asStateFlow()

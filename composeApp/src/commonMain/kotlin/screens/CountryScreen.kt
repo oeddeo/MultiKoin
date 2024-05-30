@@ -14,7 +14,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
 import me.sample.library.resources.Res
 import me.sample.library.resources.this_is_country
 import org.jetbrains.compose.resources.stringResource
@@ -22,7 +21,7 @@ import org.jetbrains.compose.resources.stringResource
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CountryScreen(
-    viewModel: LocationViewModel = viewModel { LocationViewModel() },
+    viewModel: LocationViewModel,
     onBackClick: ()->Unit,
     onNextClick: ()->Unit = {},
     name: String,
