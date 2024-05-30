@@ -39,8 +39,9 @@ import org.jetbrains.compose.resources.painterResource
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LocationScreen(
-    navController: NavHostController,
-    viewModel: LocationViewModel = viewModel { LocationViewModel() })
+    viewModel: LocationViewModel = viewModel { LocationViewModel() },
+    onNextClick: ()-> Unit,
+    )
 {
     val uiState by viewModel.uiState.collectAsState()
     var showCountries by remember { mutableStateOf(false) }
@@ -50,7 +51,7 @@ fun LocationScreen(
         topBar = {
             TopAppBar(
                 title = { Text("Location") },
-                navigationIcon = { NavigationIcon(onClick = { navController.popBackStack() }) }
+                navigationIcon = { }
             )
         }
     ) {
@@ -99,7 +100,7 @@ fun LocationScreen(
 
                 Button(
                     modifier = Modifier.align(Alignment.CenterHorizontally),
-                    onClick = { navController.navigate(Screens.CountryDetails.name)}
+                    onClick = { onNextClick()}
                 )
                 { Text("Go to 2nd Screen") }
             }

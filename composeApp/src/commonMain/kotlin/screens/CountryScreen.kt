@@ -22,8 +22,9 @@ import org.jetbrains.compose.resources.stringResource
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CountryScreen(
-    navController: NavController,
     viewModel: LocationViewModel = viewModel { LocationViewModel() },
+    onBackClick: ()->Unit,
+    onNextClick: ()->Unit = {},
 ) {
     val uiState by viewModel.uiState.collectAsState()
 
@@ -31,7 +32,7 @@ fun CountryScreen(
         topBar = {
             TopAppBar(
                 title = { Text("Country") },
-                navigationIcon = { NavigationIcon(onClick = { navController.popBackStack() }) }
+                navigationIcon = { NavigationIcon(onClick = { onBackClick() }) }
             )
         }
     ) {

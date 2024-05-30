@@ -27,10 +27,10 @@ fun App(
         modifier = Modifier.padding()
     ) {
         composable(route = Screens.Start.name) {
-            LocationScreen(navController, viewModel)
+            LocationScreen(viewModel, onNextClick = { navController.navigate(Screens.CountryDetails.name)})
         }
         composable(route = Screens.CountryDetails.name) {
-            CountryScreen(navController, viewModel)
+            CountryScreen(viewModel, navController::popBackStack)
         }
     }
 }
