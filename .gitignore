@@ -17,9 +17,9 @@ captures
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# Ignore the entire .idea directory except specific files and subdirectories
-.idea/*
-!.idea/inspectionProfiles
-!.idea/artifacts
-!.idea/runConfigurations
-!.idea/workspace.xml
+## Ignore the entire .idea directory except specific files and subdirectories
+#.idea/*
+#!.idea/inspectionProfiles
+#!.idea/artifacts
+#!.idea/runConfigurations
+#!.idea/workspace.xml
